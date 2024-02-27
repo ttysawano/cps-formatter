@@ -16,9 +16,15 @@ If you find any bugs, please let us know.
 
 ## Release Notes
 
-### 0.1.0
+For a complete list of changes, check out the [CHANGELOG.md](./CHANGELOG.md).
 
-Initial release of ...
+### Recent Releases
+
+#### 0.1.1
+- Minor updates. See [CHANGELOG](./CHANGELOG.md) for more details.
+
+#### 0.1.0
+- Initial release of cps Formatter.
 
 ---
 
