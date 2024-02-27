@@ -2,7 +2,7 @@
   "name": "cps-formatter",
   "displayName": "cps Formatter",
   "description": "A formatter for .cps files",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "publisher": "koyoh-utils",
   "engines": {
     "vscode": "^1.85.0"
@@ -10,51 +10,51 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-  ],
+  "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "cps-formatter.format",
-      "title": "Format CPS File"
-    }
+    "commands": [
+      {
+        "command": "cps-formatter.format",
+        "title": "Format CPS File"
+      }
     ],
-  "keybindings": [
-    {
-      "command": "cps-formatter.format",
-      "key": "alt+shift+f",
-      "when": "editorTextFocus && editorLangId == 'cps'"
+    "keybindings": [
+      {
+        "command": "cps-formatter.format",
+        "key": "alt+shift+f",
+        "when": "editorTextFocus && editorLangId == 'cps'"
+      }
+    ],
+    "languages": [
+      {
+        "id": "cps",
+        "extensions": [
+          ".cps"
+        ]
+      }
+    ],
+    "configuration": {
+      "title": "CPS Formatter",
+      "properties": {
+        "cpsFormatter.lastUpdateDateTimeTag": {
+          "type": "string",
+          "default": "# Last Updated:",
+          "description": "The tag used to identify the last update date and time in CPS files."
+        },
+        "cpsFormatter.authorTag": {
+          "type": "string",
+          "default": "# Author:",
+          "description": "The tag used to identify the author in CPS files."
+        },
+        "cpsFormatter.authorName": {
+          "type": "string",
+          "default": "Your Name",
+          "description": "The default author name to use in CPS files."
+        }
+      }
     }
-  ],
-  "languages": [
-    {
-      "id": "cps",
-      "extensions": [
-        ".cps"
-      ]
-    }
-  ],
-  "configuration": {
-    "title": "CPS Formatter",
-    "properties": {
-      "cpsFormatter.lastUpdateDateTimeTag": {
-        "type": "string",
-        "default": "# Last Updated:",
-        "description": "The tag used to identify the last update date and time in CPS files."
-      },
-      "cpsFormatter.authorTag": {
-        "type": "string",
-        "default": "# Author:",
-        "description": "The tag used to identify the author in CPS files."
-      },
-      "cpsFormatter.authorName": {
-      "type": "string",
-      "default": "Your Name",
-      "description": "The default author name to use in CPS files."
-    }
-    }
-  }
-},
+  },
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
