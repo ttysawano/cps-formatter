@@ -20,6 +20,11 @@ For a complete list of changes, check out the [CHANGELOG.md](./CHANGELOG.md).
 
 ### Recent Releases
 
+#### 0.2.0
+- Added `lastUpdateDateTimeTag` for custom date and time tagging.
+- Introduced `authorTag` and `authorName` settings for automatic author name insertion.
+- See [CHANGELOG](./CHANGELOG.md) for more details.
+
 #### 0.1.1
 - Minor updates. See [CHANGELOG](./CHANGELOG.md) for more details.
 
