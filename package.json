@@ -33,7 +33,17 @@
         ".cps"
       ]
     }
-  ]
+  ],
+  "configuration": {
+    "title": "CPS Formatter",
+    "properties": {
+      "cpsFormatter.lastUpdateDateTimeTag": {
+        "type": "string",
+        "default": "# Last Updated:",
+        "description": "The tag used to identify the last update date and time in CPS files."
+      }
+    }
+  }
 },
   "scripts": {
     "lint": "eslint .",
