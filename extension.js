@@ -13,8 +13,10 @@ function activate(context) {
         // 設定値を取得
         const config = vscode.workspace.getConfiguration('cpsFormatter');
         const lastUpdateDateTimeTag = config.get('lastUpdateDateTimeTag');
+        const authorTag = config.get('authorTag');
+        const authorName = config.get('authorName');
 
-        formatter.formatFile(filePath, lastUpdateDateTimeTag) // formatter.js の関数を呼び出し
+        formatter.formatFile(filePath, lastUpdateDateTimeTag, authorTag, authorName) // formatter.js の関数を呼び出し
             .then(formattedText => {
                 // 成功時の処理（エディタの内容を置き換えるなど）
                 return editor.edit(editBuilder => {

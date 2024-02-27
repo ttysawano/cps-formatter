@@ -11,7 +11,7 @@ function formatDate(date) {
            pad(date.getSeconds()) + ' JST';
 }
 
-function formatFile(filePath, lastUpdateDateTimeTag) {
+function formatFile(filePath, lastUpdateDateTimeTag, authorTag, authorName) {
     return new Promise((resolve, reject) => {
         const fileStream = fs.createReadStream(filePath);
         const rl = readline.createInterface({
@@ -44,10 +44,15 @@ function formatFile(filePath, lastUpdateDateTimeTag) {
                 originalLine = originalLine.replace(/^[0-9]+\s+\.\s*/, '');
                 originalLine = originalLine.replace(/^[0-9]+\s*/, '');
     
-                // 時刻フォーマット
+                // Time Tag Format
                 if (originalLine.startsWith(lastUpdateDateTimeTag)) {
                     const regex = new RegExp(lastUpdateDateTimeTag + ".*");
                     originalLine = originalLine.replace(regex, lastUpdateDateTimeTag + ' ' + formattedDate);
+                }
+                // author format
+                if (originalLine.startsWith(authorTag)) {
+                    const regex = new RegExp(authorTag + ".*");
+                    originalLine = originalLine.replace(regex, authorTag + ' ' + authorName);
                 }
                 if (!(/^\s*#/.test(originalLine))) {
                     originalLine = originalLine.replace(/\s+/g, ' ');

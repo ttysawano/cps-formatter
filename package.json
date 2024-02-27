@@ -41,7 +41,17 @@
         "type": "string",
         "default": "# Last Updated:",
         "description": "The tag used to identify the last update date and time in CPS files."
-      }
+      },
+      "cpsFormatter.authorTag": {
+        "type": "string",
+        "default": "# Author:",
+        "description": "The tag used to identify the author in CPS files."
+      },
+      "cpsFormatter.authorName": {
+      "type": "string",
+      "default": "Your Name",
+      "description": "The default author name to use in CPS files."
+    }
     }
   }
 },
